@@ -1,4 +1,4 @@
-// src/App.jsx
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 import React, { useEffect } from "react";
 import "./app.css";
 
