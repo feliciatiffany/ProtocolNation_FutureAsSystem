@@ -1,3 +1,11 @@
+:root{
+  --bg: #000000;
+  --fg: #f2f2f2;
+  --muted: #b7b7b7;
+  --ghost: #ffffff;
+  --accent: #7dd3fc;
+}
+
 html, body, #root { 
   height: 100vh; 
   width: 100vw;}
@@ -5,7 +13,7 @@ html, body, #root {
 
 body {
   margin: 0;
-  background: #0e0e0e;
+  background: var(--bg);
   color: #ffffff;
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", "Courier New", monospace;
 }
@@ -31,6 +39,33 @@ body {
   letter-spacing: 0.01em;
 }
 
+
+.page {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory; /* enable snapping */
+  scroll-behavior: smooth;       /* smooth programmatic snap */
+}
+
+.snap {
+  scroll-snap-align: center;     /* center each beat */
+  scroll-snap-stop: always;      /* don't skip beats */
+}
+
 .spacer {
   height: 50vh;
 }
+
+/* 1) blank-space, lonely */
+.spacer.lonely{
+  position: relative;
+  height: 100vh; 
+  background:
+    radial-gradient(1100px 400px at 50% 60%, rgba(255, 255, 255, 0.13), transparent 80%);
+  background-color: var(--bg);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.03),
+    inset 0 40px 80px -40px rgba(0,0,0,0.6),
+    inset 0 -40px 80px -40px rgba(0,0,0,0.6);
+}
+
